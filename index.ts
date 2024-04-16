@@ -87,7 +87,7 @@ export async function onEvent(fullEvent: PluginEvent, { global, config }: Plugin
         })
     } catch (error) {
         console.error(
-            `Error publishing ${event.uuid} to ${config.topicId}: `,
+            `Error publishing ${fullEvent.uuid} to ${config.topicId}: `,
             error
         )
         throw new RetryError(`Error publishing to Pub/Sub! ${JSON.stringify(error.errors)}`)
